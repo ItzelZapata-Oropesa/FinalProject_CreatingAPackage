@@ -7,6 +7,6 @@ Maintainer: Itzel Zapata-Oropesa <izapataoropesa@usf.edu>
     Description: This package is intended to convert cooking measurements
     between themselves. Some of these conversions will include standard U.S
     conversions (teaspoons to tablespoons to cups and ounces).
-License: CCO
+License: CC0
 Encoding: UTF-8
 LazyData: true
