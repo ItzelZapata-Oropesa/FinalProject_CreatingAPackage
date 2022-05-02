@@ -1,18 +1,13 @@
-# Hello, world!
-#
-# This is an example function named 'hello' 
-# which prints 'Hello, world!'.
-#
-# You can learn more about package authoring with RStudio at:
-#
-#   http://r-pkgs.had.co.nz/
-#
-# Some useful keyboard shortcuts for package authoring:
-#
-#   Install Package:           'Cmd + Shift + B'
-#   Check Package:             'Cmd + Shift + E'
-#   Test Package:              'Cmd + Shift + T'
-
-hello <- function() {
-  print("Hello, world!")
+#' Cups to tablespoons conversion
+#'
+#' Take in the number of input as the number of cups and converts it to tablespoons
+#' @param x A numeric value representing the number of cups needed
+#' @return The number of tablespoons that equivalent to the number of cups that were inputted into the function
+#' @export
+cups2Tbsp <- function(x){
+  Tbsp <- 1
+  cups <- 16 * Tbsp
+  z <- x * cups
+  y <- "Tablespoons"
+  return(c(z,y))
 }
