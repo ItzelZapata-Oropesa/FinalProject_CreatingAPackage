@@ -1,0 +1,84 @@
+---
+title: "CookingConversion"
+author: "Itzel Zapata-Oropesa"
+date: "5/1/2022"
+output: html_document
+---
+[Github](https://github.com/ItzelZapata-Oropesa/FinalProject_CreatingAPackage)
+
+## 'Cooking Conversion' package
+
+This package that hs been created contains various functions that convert
+cooking measurments amoungst themselves.
+
+```{r}
+#Load library
+library(cookingConversions)
+
+```
+
+Below we will use different functions created with in this package:
+
+```{r , echo=TRUE}
+#Use the function to find out how many cups are in 5 gallons
+
+gals2cups(5)
+
+#After viewing this function we can see that there are 80 cups in 5 gallons
+```
+
+Below we will use more functions to find somemore conversions
+
+```{r, echo=TRUE}
+#How many tablespoons are in four cups
+cups2Tbsp(4)
+
+#After finding out how many tablespoons are in four cups, use a different 
+#to figure out how many teaspoons are in four cups
+Tbsp2tsp(64)
+
+```
+Creating a dataframe to use for our functions
+
+
+```{r}
+ingredient <- c("butter", "whiteSugar", "lightBrownSugar", "vanillaExtract", 
+                "Eggs", "allPurposeFlour", "bakingSoda", "bakingPowder", "chocoChips")
+measurments <- c(1, 1, 1, 2, 2, 3, 1, 1/2, 2)
+cookies<- data.frame(ingredient, measurments)
+cookies$units <- c("NA", "cup", "cup", "tsp", "NA", "cups", "tsp", "tsp", "cups")
+
+#view head of dataframe
+head(cookies)
+
+```
+Using functions on new dataframe
+
+```{r}
+#Figuring out how many tablespoons of milk we need to make cookies
+cups2Tbsp(cookies$measurments[2])
+
+#Repeating the same process but with AP flour
+cups2Tbsp(cookies$measurments[6])
+```
+
+  ##Inside my function
+Taking a closer look at the inside of my functions
+note: all my functions created for this package follow the same format
+```{r}
+Tbsp2tsp <- function(x){
+  teasp <- 1
+  Tbsp <- 3 * teasp
+  z <- x * Tbsp
+  y <- "teaspoons"
+  return(c(z,y))
+}
+```
+
+Above we can see that to begin I set a teaspoon equal to one. The based on prior
+knowledge I know 3 teaspoons are equal to one tablesppon. Therefore I create a 
+variable named Tbsp that is set to be 3 time a teaspoon (which in this case is
+1). Next I create a variable names Z which I set the input value to be
+multiplied by Tbsp. Lastly I create a variable names Y which I input a text
+string which is the name of the variable we are solving for. My last step is
+to set the function to return both the Z and Y variable to display our results.
